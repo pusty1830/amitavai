@@ -1,0 +1,49 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Global neon theme */
+:root {
+  color-scheme: dark;
+}
+body {
+  @apply bg-black text-white;
+  background-image:
+    var(--neon-grid, radial-gradient(circle at 1px 1px, rgba(255,255,255,0.08) 1px, transparent 1px));
+  background-size: 24px 24px;
+}
+
+.glass {
+  @apply bg-white/5 backdrop-blur-md border border-white/10;
+}
+
+.neon-border {
+  box-shadow: inset 0 0 12px rgba(0,234,255,0.25), 0 0 18px rgba(122,0,255,0.25);
+  border: 1px solid rgba(255,255,255,0.12);
+}
+
+.scrollbar-neon::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+.scrollbar-neon::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, rgba(0,234,255,.6), rgba(255,43,209,.6));
+  border-radius: 9999px;
+}
+.scrollbar-neon::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Force native select/option colors so options are visible in the popup menu */
+select,
+select option {
+  background-color: #0a0a0a !important; /* near-black */
+  color: #ffffff !important;            /* pure white */
+}
+
+/* Optional: placeholder-like option (if you use it) */
+select option[disabled],
+select option[value=""] {
+  color: rgba(255,255,255,0.6) !important;
+}
